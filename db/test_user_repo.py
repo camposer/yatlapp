@@ -97,4 +97,3 @@ def get_table(schema):
 def insert_user(tx, user):
     stmt = insert(get_table(tx.schema)).values(user)
     tx.conn.execute(stmt)
-

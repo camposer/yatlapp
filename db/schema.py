@@ -3,12 +3,12 @@ from sqlalchemy import (
     create_engine, 
     Boolean,
     Column, 
+    ForeignKey,
     Integer, 
     MetaData, 
     String,
     Table
 )
-from sqlalchemy.sql.schema import ForeignKey
 
 class Schema:
     def __init__(self):
