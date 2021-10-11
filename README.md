@@ -1,1 +1,1 @@
-# YATLAPP - Yet Another TODO List App 
+# Yet Another TODO List App 
