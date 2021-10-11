@@ -9,7 +9,6 @@ from user_repo import UserRepo
 def schema(monkeypatch):
     monkeypatch.setenv("DB_URI", "sqlite://")
     schema = Schema()
-    schema.drop_all_tables()
     schema.create_all_tables()
     return schema
 

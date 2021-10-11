@@ -10,7 +10,6 @@ def schema(monkeypatch):
     monkeypatch.setenv("DB_URI", "sqlite://")
     schema = Schema()
     _enable_foreign_constraints(schema)
-    schema.drop_all_tables()
     schema.create_all_tables()
     return schema
 
