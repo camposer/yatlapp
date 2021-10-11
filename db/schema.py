@@ -51,9 +51,3 @@ class TransactionManager:
     def __exit__(self, type, value, traceback):
         self.conn.commit()
         self.conn.close()
-
-    def drop_all_tables(self):
-        self.schema.metadata.drop_all(self.engine)
-
-    def create_all_tables(self):
-        self.schema.metadata.create_all(self.engine)

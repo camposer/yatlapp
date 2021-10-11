@@ -9,12 +9,12 @@ from todo_repo import TodoRepo
 def schema(monkeypatch):
     monkeypatch.setenv("DB_URI", "sqlite://")
     schema = Schema()
-    _enable_foreign_keys(schema)
+    _enable_foreign_constraints(schema)
     schema.drop_all_tables()
     schema.create_all_tables()
     return schema
 
-def _enable_foreign_keys(schema):
+def _enable_foreign_constraints(schema):
     def _fk_pragma_on_connect(dbapi_con, con_record):
         dbapi_con.execute('pragma foreign_keys=ON')
     event.listen(schema.engine, 'connect', _fk_pragma_on_connect)
